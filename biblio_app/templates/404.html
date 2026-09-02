@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 5rem;
+            margin: 0;
+            color: #dc3545;
+        }
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+        p {
+            color: #6c757d;
+            margin-bottom: 30px;
+            max-width: 400px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #0d6efd;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        .btn:hover {
+            background-color: #0b5ed7;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>404</h1>
+    <h2>Página no encontrada</h2>
+    <p>La URL solicitada no existe o no está disponible en este servidor.</p>
+    
+    <!-- Botón para volver a la ruta principal de Django -->
+    <a href="{% url 'home' %}" class="btn">Volver a la página principal</a>
+
+</body>
+</html>
