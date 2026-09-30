@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetario API - Inicio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-amber-50 text-gray-800 min-h-screen flex flex-col justify-between font-sans">
+
+    <!-- Navegación -->
+    <nav class="bg-amber-600 text-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <span class="text-2xl font-bold flex items-center gap-2">
+                🍳 Recetario API
+            </span>
+            <div class="space-x-6 font-medium">
+                <a href="{% url 'index' %}" class="hover:text-amber-200 transition">Inicio</a>
+                <a href="javascript:void(0)" class="hover:text-amber-200 transition opacity-80 cursor-default">Categorías</a>
+                <a href="javascript:void(0)" class="hover:text-amber-200 transition opacity-80 cursor-default">Nosotros</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-amber-500 text-white py-16 px-4 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Descubre y Comparte las Mejores Recetas</h1>
+            <p class="text-lg text-amber-100 mb-6">
+                Explora nuestro catálogo culinario preparado para la integración de la API REST.
+            </p>
+            <button type="button" class="inline-block bg-white text-amber-700 font-bold px-6 py-3 rounded-lg shadow cursor-default">
+                Explorar Todas las Recetas
+            </button>
+        </div>
+    </header>
+
+    <!-- Catálogo de Recetas -->
+    <main class="max-w-6xl mx-auto px-4 py-12 flex-grow">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Recetas Destacadas</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Receta 1 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-amber-100 flex flex-col justify-between">
+                <div class="p-6">
+                    <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Plato Principal</span>
+                    <h3 class="text-xl font-bold text-gray-900 mt-1 mb-2">Pastel de Choclo</h3>
+                    <div class="flex justify-between text-sm text-gray-600 mb-4">
+                        <span>⏱️ 45 min</span>
+                        <span>📊 Dificultad Media</span>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <button type="button" class="w-full text-center bg-amber-600 text-white font-semibold py-2 rounded-lg cursor-default opacity-90">
+                        Ver Preparación
+                    </button>
+                </div>
+            </div>
+
+            <!-- Receta 2 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-amber-100 flex flex-col justify-between">
+                <div class="p-6">
+                    <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Entrada</span>
+                    <h3 class="text-xl font-bold text-gray-900 mt-1 mb-2">Empanadas de Pino</h3>
+                    <div class="flex justify-between text-sm text-gray-600 mb-4">
+                        <span>⏱️ 60 min</span>
+                        <span>📊 Dificultad Alta</span>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <button type="button" class="w-full text-center bg-amber-600 text-white font-semibold py-2 rounded-lg cursor-default opacity-90">
+                        Ver Preparación
+                    </button>
+                </div>
+            </div>
+
+            <!-- Receta 3 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-amber-100 flex flex-col justify-between">
+                <div class="p-6">
+                    <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Postre</span>
+                    <h3 class="text-xl font-bold text-gray-900 mt-1 mb-2">Mote con Huesillo</h3>
+                    <div class="flex justify-between text-sm text-gray-600 mb-4">
+                        <span>⏱️ 30 min</span>
+                        <span>📊 Dificultad Baja</span>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <button type="button" class="w-full text-center bg-amber-600 text-white font-semibold py-2 rounded-lg cursor-default opacity-90">
+                        Ver Preparación
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="bg-gray-800 text-gray-300 py-6 text-center text-sm">
+        <p>&copy; 2026 Core Recipe API Project - Desarrollado en Django</p>
+    </footer>
+
+</body>
+</html>
