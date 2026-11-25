@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+
+{% block titulo %}<title>Editar Categoría</title>{% endblock %}
+
+{% block contenido %}
+<div class="card shadow-sm w-50 mx-auto">
+    <div class="card-body">
+        <h3 class="card-title mb-4">Modificar Categoría #{{ object.id }}</h3>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="d-flex justify-content-between mt-4">
+                <a href="{% url 'listado_categorias' %}" class="btn btn-secondary">Cancelar</a>
+                <button type="submit" class="btn btn-warning">Actualizar</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

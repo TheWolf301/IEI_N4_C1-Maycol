@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block titulo %}<title>Eliminar Categoría</title>{% endblock %}
+
+{% block contenido %}
+<div class="card border-danger shadow-sm w-50 mx-auto">
+    <div class="card-header bg-danger text-white">
+        Confirmar Eliminación
+    </div>
+    <div class="card-body">
+        <p class="fs-5">¿Estás seguro de que deseas eliminar la categoría <strong>"{{ categoria }}"</strong>?</p>
+        <p class="text-muted">Esta acción no se puede deshacer.</p>
+        <form method="post">
+            {% csrf_token %}
+            <div class="d-flex justify-content-between mt-4">
+                <a href="{% url 'listado_categorias' %}" class="btn btn-secondary">Cancelar</a>
+                <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

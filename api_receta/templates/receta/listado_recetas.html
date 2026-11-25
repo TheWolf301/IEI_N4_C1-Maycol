@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+
+{% block titulo %}<title>Listado de Recetas</title>{% endblock %}
+
+{% block contenido %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Listado de Recetas</h2>
+    <a href="{% url 'crear_receta' %}" class="btn btn-primary">Nueva Receta</a>
+</div>
+
+<table id="tablaRecetas" class="table table-hover table-bordered bg-white">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Categoría</th>
+            <th>Tiempo (min)</th>
+            <th>Porciones</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for receta in recetas %}
+        <tr>
+            <td>{{ receta.id }}</td>
+            <td>{{ receta.titulo }}</td>
+            <td>{{ receta.categoria.nombre }}</td>
+            <td>{{ receta.tiempo_preparacion }} min</td>
+            <td>{{ receta.porciones }}</td>
+            <td>
+                <a href="{% url 'detalle_receta' receta.id %}" class="btn btn-info btn-sm">Detalle</a>
+                <a href="{% url 'editar_receta' receta.id %}" class="btn btn-warning btn-sm">Editar</a>
+                <a href="{% url 'eliminar_receta' receta.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="6" class="text-center">No hay recetas registradas.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+{% block script %}
+<script>
+    $(document).ready(function() {
+        $('#tablaRecetas').DataTable();
+    });
+</script>
+{% endblock %}

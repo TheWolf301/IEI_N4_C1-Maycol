@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block titulo %}<title>Detalle de Categoría</title>{% endblock %}
+
+{% block contenido %}
+<div class="card shadow-sm w-50 mx-auto">
+    <div class="card-header bg-primary text-white">
+        Detalle de Categoría #{{ categoria.id }}
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">{{ categoria.nombre }}</h4>
+        <hr>
+        <p><strong>ID:</strong> {{ categoria.id }}</p>
+        <p class="text-muted small">Creada el: {{ categoria.created_at }}</p>
+        <div class="d-flex gap-2 mt-4">
+            <a href="{% url 'listado_categorias' %}" class="btn btn-secondary">Volver</a>
+            <a href="{% url 'editar_categoria' categoria.id %}" class="btn btn-warning">Editar</a>
+            <a href="{% url 'eliminar_categoria' categoria.id %}" class="btn btn-danger">Eliminar</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

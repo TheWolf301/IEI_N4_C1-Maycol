@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+{% block titulo %}<title>Detalle de Receta</title>{% endblock %}
+
+{% block contenido %}
+<div class="card shadow-sm w-50 mx-auto">
+    <div class="card-header bg-primary text-white">
+        Detalle de Receta #{{ receta.id }}
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">{{ receta }}</h4>
+        <hr>
+        <p><strong>ID:</strong> {{ receta.id }}</p>
+        <p><strong>Categoría:</strong> {{ receta.categoria }}</p>
+        <p><strong>Preparación:</strong> {{ receta.preparacion }}</p>
+        <div class="d-flex gap-2 mt-4">
+            <a href="{% url 'listado_recetas' %}" class="btn btn-secondary">Volver</a>
+            <a href="{% url 'editar_receta' receta.id %}" class="btn btn-warning">Editar</a>
+            <a href="{% url 'eliminar_receta' receta.id %}" class="btn btn-danger">Eliminar</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -21,5 +21,5 @@ from api_receta import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('api_receta/', include('api_receta.urls')),
+    path('', include('api_receta.urls')),
 ]

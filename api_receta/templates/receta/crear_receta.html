@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+
+{% block titulo %}<title>Crear Receta</title>{% endblock %}
+
+{% block contenido %}
+<div class="card shadow-sm w-50 mx-auto">
+    <div class="card-body">
+        <h3 class="card-title mb-4">Registrar Receta</h3>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="d-flex justify-content-between mt-4">
+                <a href="{% url 'listado_recetas' %}" class="btn btn-secondary">Cancelar</a>
+                <button type="submit" class="btn btn-success">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
