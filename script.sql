@@ -1,5 +1,5 @@
 CREATE DATABASE IF NOT EXISTS api_receta CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-CREATE USER IF NOT EXISTS 'rooot'@'localhost' IDENTIFIED BY '';
-GRANT ALL PRIVILEGES ON api_receta.* TO 'rooot'@'localhost';
+CREATE USER IF NOT EXISTS 'root'@'localhost' IDENTIFIED BY '';
+GRANT ALL PRIVILEGES ON api_receta.* TO 'root'@'localhost';
 FLUSH PRIVILEGES;
